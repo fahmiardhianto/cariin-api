@@ -1,10 +1,11 @@
 class ApplicationController < ActionController::API
   include Crawler
-  def query
+
+  def index
     product = params[:product]
     category = params[:category]
     location = params[:location]
 
-    render json: search(product)
+    render json: search_product(product, location)
   end
 end
