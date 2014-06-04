@@ -1,3 +1,5 @@
+user 'fahmi', 'fahmi'
+
 root = "/home/fahmi/cariin-api"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
