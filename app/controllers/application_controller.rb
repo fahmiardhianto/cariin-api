@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
   # include OlxScraper
 
   def index
-    product = params[:product]
+    name = params[:name]
     category = params[:category]
     location = params[:location]
 
@@ -11,7 +11,7 @@ class ApplicationController < ActionController::API
     berniaga = Berniaga.new
     kaskus = Kaskus.new
 
-    products = [olx.generate_link(product, category, location), kaskus.generate_link(product)]
+    products = [olx.generate_link(name, category, location), kaskus.generate_link(name)]
     products.flatten!
     products.sort_by! do |product|
       product.name
