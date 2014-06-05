@@ -4,7 +4,9 @@ class ApplicationController < ActionController::API
 
   def index
     name = params[:name]
+    name.gsub!(' ', '+')
     category = params[:category]
+    category.gsub!(' ', '+')
     location = params[:location]
 
     olx = Olx.new
@@ -20,5 +22,6 @@ class ApplicationController < ActionController::API
     # render json: olx.generate_link(product, category, location)
     # render json: kaskus.generate_link(product)
     render json: products
+    # render name
   end
 end
