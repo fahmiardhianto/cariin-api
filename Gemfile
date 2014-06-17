@@ -9,6 +9,8 @@ gem 'spring', :group => :development
 # gem 'sqlite3'
 gem 'rails_12factor'
 
+gem 'pg'
+
 gem 'tzinfo-data'
 
 gem 'nokogiri'
