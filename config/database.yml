@@ -26,9 +26,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: test-postgres_production
+  database: cariin-postgres_dev
   pool: 5
-  username: test-postgres
+  username: fahmi
   password:
 
 production:
@@ -36,5 +36,5 @@ production:
   encoding: unicode
   database: cariin-postgres_production
   pool: 5
-  username: fahmiardhianto
+  username: fahmi
   password:

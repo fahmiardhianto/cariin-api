@@ -1,8 +1,11 @@
 class ApplicationController < ActionController::API
   # include Crawler
   # include OlxScraper
-
   def index
+    render 'layouts/index'
+  end
+
+  def fetch
     name = params[:name]
     name.gsub!(' ', '+')
     category = params[:category]
