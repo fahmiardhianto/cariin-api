@@ -36,5 +36,5 @@ production:
   encoding: unicode
   database: cariin-postgres_production
   pool: 5
-  username: fahmi
+  username: fahmiardhianto
   password:
