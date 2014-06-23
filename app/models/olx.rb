@@ -10,9 +10,9 @@ class Olx
       87
     when 'properti'
       88
-    when 'keperluan pribadi'
+    when 'keperluan+pribadi'
       98
-    when 'elektronik dan gadget'
+    when 'elektronik+dan+gadget'
       92
     end
   end
@@ -32,6 +32,7 @@ class Olx
       p.set_price(item.at_css(".price").text.delete(' '))
       p.set_location(item.at_css(".locprop").text)
       p.set_url(item.css(".ikl-box a").map { |link| link['href']})
+      p.set_image_url(item.css(".fotoimage").map { |link| link['src']})
       p.set_shop('olx.co.id')
       products << p
     end

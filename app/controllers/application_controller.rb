@@ -9,7 +9,7 @@ class ApplicationController < ActionController::API
     name = params[:name]
     name.gsub!(' ', '+')
     category = params[:category]
-    category.gsub!(' ', '+')
+    category.gsub!(' ', '+') if category 
     location = params[:location]
 
     olx = Olx.new
@@ -17,6 +17,7 @@ class ApplicationController < ActionController::API
     kaskus = Kaskus.new
 
     products = [olx.generate_link(name, category, location), kaskus.generate_link(name)]
+    # products = [olx.generate_link(name, category, location), kaskus.generate_link(name), berniaga.generate_link(name, category)]
     products.flatten!
     products.sort_by! do |product|
       product.name

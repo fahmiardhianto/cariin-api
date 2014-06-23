@@ -1,3 +1,19 @@
+<style>
+	table {
+		/*border: 1px solid #000;*/
+		/*background: #ddd;*/
+	}
+	th {
+		/*border-bottom: 1px solid #000;*/
+	}
+	td {
+		padding-right: 50px;
+	}
+	tr {
+		text-align: left;
+	}
+</style>
+
 <div style="padding:20px">
 	<h1>API Cariin v1</h1>
 	<h3>Resource URL</h3>
@@ -8,21 +24,23 @@
 			<th><h3>Parameter</h3></th>
 		</tr>
 		<tr>
-			<td>name</small></td>
+			<td>name</td>
 			<td>Menyatakan nama barang yang ingin dimasukkan ke dalam query.</td>
 		</tr>
 		<tr>
-			<td>category</td>
-			<td>Menyatakan kategori dari nama barang yang ingin dimasukkan ke dalam query</td>
+			<td>category <small>(optional)</small></td>
+			<td>Menyatakan kategori dari nama barang yang ingin dimasukkan ke dalam query. Jika tidak menyertakan category, maka pencarian akan dilakukan di semua kategori.</td>
 		</tr>
 		<tr>
-			<td>location <small>(optional)</td>
-			<td>Menyatakan lokasi pencarian</td>
+			<td>location <small>(optional)</small></td>
+			<td>Menyatakan lokasi barang dijual. Jika tidak menyertakan location, maka pencarian akan dilakukan di seluruh lokasi yang tersedia.</td>
 		</tr>
 	</table>
-
-	<h3>Contoh Request</h3>
+	<br><br>
 	<table>
+		<tr>
+			<th><h3>Contoh Request</h3></th>
+		</tr>
 		<tr>
 			<td>POST</td>
 			<td>http://cariin.herokuapp.com/api/v1/products</td>
@@ -32,4 +50,41 @@
 			<td>name=vario</td>
 		</tr>
 	</table>
+	<br><br>
+	<table>
+		<tr>
+			<th>Response</th>
+		</tr>
+		<tr>
+			<td colspan="2">Response akan berupa array yang berisi barang-barang hasil pencarian. Atribut yang disertakan di dalam response adalah name, price(harga barang, untuk Kaskus, karena kebanyakan harga yang tercantum tidak valid, kami memberi default ''), location, item_url(link ke halaman asli di situs jual beli yang bersangkutan), dan shop(nama situs barang yang bersangkutan ditemukan).</td>
+		</tr>
+		<tr>
+			<td>{</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>"name": "Honda Vario 2007",</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>"price": "Rp6.300.000",</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>"location": "Banten",</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>"item_url": [
+            "http://www.olx.co.id/iklan/honda-vario-2007-58608301.html#pn_12a08bcf2fe8e4cd522655e3a803c194"
+        ],</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>"shop": "olx.co.id"</td>
+		</tr>
+		<tr>
+			<td>}...</td>
+		</tr>
+	</table>	
 </div>

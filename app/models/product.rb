@@ -1,5 +1,5 @@
 class Product
-  attr_accessor :name, :item_url, :price, :location, :shop
+  attr_accessor :name, :item_url, :price, :location, :shop, :image_url
 
   def set_name(name)
     self.name = name
@@ -23,5 +23,9 @@ class Product
 
   def set_shop(shop)
     self.shop = shop
+  end
+
+  def set_image_url(url)
+    self.image_url = url
   end
 end
