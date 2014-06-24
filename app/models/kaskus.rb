@@ -14,9 +14,10 @@ class Kaskus
       p = Product.new
       p.set_name(item.at_css(".post-title").text)
       # p.set_price(item.at_css(".price").text.delete(' '))
-      # p.set_price('')
+      p.set_price('')
       p.set_location(doc.css('.adr').at_css(".locality").text)
       p.set_url(item.css(".post-title a").map { |link| link['href']})
+      p.set_image_url('')
       p.set_shop('Kaskus')
       products << p
     end
